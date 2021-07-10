@@ -23,14 +23,7 @@ const AppContent = () => {
         </Header>
         {view === PREJOIN && <PreJoinRoom />}
         {view === INCALL && <InCall />}
-        <Link
-          center={view === INCALL}
-          href="https://docs.daily.co/docs/reference-docs"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn more about this demo
-        </Link>
+        
       </Wrapper>
     </AppContainer>
   );
