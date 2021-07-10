@@ -373,7 +373,7 @@ export const CallProvider = ({ children }) => {
             break;
           case FORCE_EJECT:
             //seeya
-            leaveCall();
+            // leaveCall();
             break;
           default:
             break;

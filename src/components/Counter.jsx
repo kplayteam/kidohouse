@@ -4,36 +4,36 @@ import { useCallState } from "../CallProvider";
 import theme from "../theme";
 
 const Counter = () => {
-  const { roomExp, leaveCall, view } = useCallState();
-  const [counter, setCounter] = useState("");
-  const interval = useRef();
+  // const { roomExp, leaveCall, view } = useCallState();
+  // const [counter, setCounter] = useState("");
+  // const interval = useRef();
 
-  useEffect(() => {
-    /**
-     * Rooms exist for 10 minutes from creation.
-     * We use the expiry timestamp to show participants
-     * how long they have left in the room.
-     */
-    if (interval.current) {
-      clearInterval(interval.current);
-    }
+  // useEffect(() => {
+  //   /**
+  //    * Rooms exist for 10 minutes from creation.
+  //    * We use the expiry timestamp to show participants
+  //    * how long they have left in the room.
+  //    */
+  //   if (interval.current) {
+  //     clearInterval(interval.current);
+  //   }
 
-    interval.current = setInterval(() => {
-      let secs = Math.round((roomExp - Date.now()) / 1000);
-      const value = Math.floor(secs / 60) + ":" + ("0" + (secs % 60)).slice(-2);
-      if (secs <= 0) {
-        clearInterval(interval.current);
-        // console.log("Eep! Room has expired");
-        // leaveCall();
-        return;
-      }
-      setCounter(value);
-    }, 1000);
+  //   // interval.current = setInterval(() => {
+  //   //   let secs = Math.round((roomExp - Date.now()) / 1000);
+  //   //   const value = Math.floor(secs / 60) + ":" + ("0" + (secs % 60)).slice(-2);
+  //   //   if (secs <= 0) {
+  //   //     clearInterval(interval.current);
+  //   //     // console.log("Eep! Room has expired");
+  //   //     // leaveCall();
+  //   //     return;
+  //   //   }
+  //   //   setCounter(value);
+  //   // }, 1000);
 
-    return () => {
-      clearInterval(interval.current);
-    };
-  }, [roomExp, leaveCall, view]);
+  //   return () => {
+  //     clearInterval(interval.current);
+  //   };
+  // }, [roomExp, leaveCall, view]);
 
   // return (
   //   <Container>
