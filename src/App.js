@@ -17,10 +17,9 @@ const AppContent = () => {
       <Wrapper>
         <Header>
           <HeaderTop>
-            <Title>Party line</Title>
+            <Title>KidoHouse</Title>
             <Logo src={logo} className="App-logo" alt="logo" />
-          </HeaderTop>
-          <SmallText>An audio API demo from Daily</SmallText>
+          </HeaderTop>          
         </Header>
         {view === PREJOIN && <PreJoinRoom />}
         {view === INCALL && <InCall />}

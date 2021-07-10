@@ -23,8 +23,8 @@ const Counter = () => {
       const value = Math.floor(secs / 60) + ":" + ("0" + (secs % 60)).slice(-2);
       if (secs <= 0) {
         clearInterval(interval.current);
-        console.log("Eep! Room has expired");
-        leaveCall();
+        // console.log("Eep! Room has expired");
+        // leaveCall();
         return;
       }
       setCounter(value);
@@ -35,9 +35,15 @@ const Counter = () => {
     };
   }, [roomExp, leaveCall, view]);
 
+  // return (
+  //   <Container>
+  //     Demo ends in <Count>{counter}</Count>
+  //   </Container>
+  // );
+
   return (
     <Container>
-      Demo ends in <Count>{counter}</Count>
+      
     </Container>
   );
 };
